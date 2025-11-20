@@ -1,173 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 | 수덕캠핑장</title>
-
-    <style>
-        :root {
-            --brand-color: #31591d;
-            --bg-color: #f5f7fa;
-            --card-radius: 14px;
-            --shadow: 0 6px 16px rgba(0,0,0,0.06);
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg-color);
-            font-family: 'Noto Sans KR', sans-serif;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--brand-color), #6AA6FF);
-            padding: 36px 20px;
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 25px auto;
-            padding: 0 18px;
-        }
-
-        .notice-box {
-            background: white;
-            border-radius: var(--card-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 16px;
-            overflow: hidden;
-        }
-
-        .notice-header {
-            padding: 22px 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-
-        .notice-header:hover {
-            background: #f0f4ff;
-        }
-
-        .notice-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--brand-color);
-            flex: 1;
-        }
-
-        .notice-date {
-            font-size: 0.9rem;
-            color: #777;
-            margin-left: 12px;
-        }
-
-        .arrow {
-            font-size: 1.1rem;
-            transition: 0.25s ease;
-            color: #666;
-        }
-
-        .notice-content {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 26px;
-            transition: max-height 0.35s ease;
-            line-height: 1.6;
-            background: #fff;
-        }
-
-        .notice-content.open {
-            padding: 22px 26px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 32px 0;
-            font-size: 0.85rem;
-            color: #999;
-        }
-
-        /* 모바일 최적화 */
-        @media(max-width: 480px) {
-            header h1 { font-size: 1.5rem; }
-            .notice-header { padding: 18px 20px; }
-            .notice-title { font-size: 1rem; }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>공지사항 | 수덕캠핑장</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-    <h1>공지사항</h1>
+  <h1>공지사항</h1>
 </header>
 
 <div class="container" id="notice-container">
-    <!-- JSON 데이터로 공지가 자동 생성됨 -->
+  <!-- JSON 공지가 여기 표시됩니다 -->
 </div>
 
-<footer>
-    © 2025 매장명. All rights reserved.
-</footer>
-
-<script>
-    // JSON 불러오기
-    fetch("notices.json")
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("notice-container");
-
-            data.forEach(notice => {
-                const box = document.createElement("div");
-                box.className = "notice-box";
-
-                box.innerHTML = `
-                    <div class="notice-header">
-                        <div class="notice-title">${notice.title}</div>
-                        <div class="notice-date">${notice.date}</div>
-                        <div class="arrow">▼</div>
-                    </div>
-                    <div class="notice-content">
-                        ${notice.content}
-                    </div>
-                `;
-
-                container.appendChild(box);
-            });
-
-            // 아코디언 기능 연결
-            document.querySelectorAll('.notice-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    const arrow = header.querySelector('.arrow');
-
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                        content.classList.remove("open");
-                        arrow.style.transform = "rotate(0deg)";
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.add("open");
-                        arrow.style.transform = "rotate(180deg)";
-                    }
-                });
-            });
-        })
-        .catch(err => {
-            console.error("JSON 로드 오류:", err);
-        });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
