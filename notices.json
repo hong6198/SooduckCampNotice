@@ -7,27 +7,7 @@
   {
     "title": "봄 시즌 메뉴 업데이트 안내",
     "date": "2025.03.10",
-    "content": "<table>
-  <thead>
-    <tr>
-      <th>이용일 전 취소</th>
-      <th>환불률</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>6일 전 취소</td><td class=\"refund-rate\">80%</td></tr>
-    <tr><td>5일 전 취소</td><td class=\"refund-rate\">70%</td></tr>
-    <tr><td>4일 전 취소</td><td class=\"refund-rate\">60%</td></tr>
-    <tr><td>3일 전 취소</td><td class=\"refund-rate\">50%</td></tr>
-    <tr><td>2일 전 취소</td><td class=\"refund-rate\">40%</td></tr>
-    <tr><td>1일 전 취소</td><td class=\"refund-rate\">30%</td></tr>
-    <tr><td>당일 취소 및 노쇼</td><td class="no-refund">환불 불가</td></tr>
-  </tbody>
-</table>
-
-<div class=\"note\">
-  <p>※ 태풍 등의 천재지변으로 인한 취소는 100% 환불 됩니다.</p>
-  <p>※ 본 캠핑장은 우선 시에도 정상운영 하므로 인한 취소는 환불규정을 따릅니다.</p>
+    "content": ""
 </div>"
   }
 ]
