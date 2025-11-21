@@ -86,3 +86,8 @@ tbody tr:last-child td {
   font-size: 1.2rem;
   color: #666;
 }
+
+.red-area {
+  color: #d93025;
+  font-weight: 700;
+}
